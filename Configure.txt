@@ -1,0 +1,43 @@
+npm i typescript @types/node tsx -D
+
+npx tsc --init
+
+https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
+
+npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier prettier typescript
+
+.eslintrc:
+
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+  },
+
+  "env": {
+    "browser": false,
+    "es2021": true
+  }
+}
+
+.prettierrc:
+
+{
+    "singleQuote": true,
+    "tabWidth": 4,
+    "semi": true,
+    "trailingComma": "all",
+    "useTabs": false
+}
